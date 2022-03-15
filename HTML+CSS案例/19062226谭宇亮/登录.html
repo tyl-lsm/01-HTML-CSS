@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;/*让盒子的所有边距向内加*/
+        }
+        .section{
+            height: 500px;
+            width: 100%;
+            background-color: pink;
+            position: relative;
+            top: 100px;
+            display: flex;/*开启伸缩布局*/
+            justify-content: center;/*指定水平方向上的对齐方式为中间对齐*/
+            align-items: center;/*用于指定垂直方向上的对齐方式为中间对齐*/
+        }
+        .box{
+            height: 400px;
+            width: 400px;
+            /*background-color: skyblue;*/
+            /*margin: 0 auto;*/
+            flex-direction: column;/*用于指定flex容器中子项的主轴方向为垂直方向*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        p{
+            font-size: 90px;
+            font-weight: bold;
+            font-family: "宋体", sans-serif;
+            color: #fff;
+            /*flex: 2;*/
+            margin-top: 10px;
+
+        }
+        .div1{
+            /*flex: 1;*/
+        }
+        input{
+            margin-top: 20px;
+            width: 220px;
+            height: 40px;
+            display: block;
+            border-radius: 20px;
+            border: 1px solid #fff;
+            list-style: none;
+            line-height: 40px;
+            text-align: center;
+            outline: none;/*清除输入框点击后出现的边框*/
+        }
+        button{
+            width: 40px;
+            height: 30px;
+            border-radius: 7px;
+            background-color: yellow;
+            cursor: pointer;
+            margin-top: 20px;
+            opacity: 0.8;
+            outline: none;
+        }
+        button:active{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="section">
+    <div class="box">
+        <p>welcome</p>
+        <div class="div1"><input type="text" placeholder="请输入账号"></div>
+        <div class="div1"><input type="password" placeholder="请输入密码"></div>
+        <button>登录</button>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+1.清除浮动的本质
+清除浮动元素脱离标准流所造成的影响
+2.清除浮动的策略
+闭合浮动：只让浮动在父盒子内部影响，不影响父盒子以外的其他盒子
+3.清除浮动的方法：
+1)额外标签法（不常用）
+在浮动子元素的后面添加一个额外的标签，并添加清除浮动的样式(clear)
+注意：新添加的额外的元素必须是块级元素
+
+2)父级添加overflow
+给父盒子添加overflow样式
+
+3):after伪元素(本质上还是添加额外的盒子)
+//给父盒子添加
+.father-box : after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.father-box {
+	/* IE6 7兼容 */
+	*zoom: 1;
+}
+
+4)双伪元素
+//给父盒子添加
+.father-box:before,.father-box:after{
+	content: "";
+	display: table;
+}
+.father-box:after {
+	clear: both;
+}
+.father-box {
+	*zoom: 1;
+}
+
+
+

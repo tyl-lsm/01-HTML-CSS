@@ -1,0 +1,165 @@
+//rem
+1、概念：rem可以在用户浏览网页时，根据屏幕的尺寸，向用户展示
+更适合用户的布局、文字、图片、按钮
+rem是相对于根元素的字体大小的单位
+一旦根节点HTML定义的font-size发生变化，那么整个网页中
+运用到rem的也会熊随之变化
+2、使用：1rem=16px
+
+
+//字体图标
+阿里巴巴适量图标库 www.iconfont.cn
+www.icomoon.io
+
+
+
+//伸缩布局
+1、flex布局：display:inline-flex//将对象作为弹性伸缩盒，用于行内元素
+	     display:flex//将对象作为弹性伸缩盒展示，用于块级元素
+2、属性  
+flex-direction//用于指定flex主轴方向，继而指定flex子项在flex容器中的位置
+值：row//默认值，表示水平方向从左到右排列，水平方向轴线为主轴
+       row-reverse//与row相反
+       column//表示垂直方向从上到下排列，垂直方向为轴线主轴
+       column-reverse//与column相反
+
+justify-content//用于指定主轴（水平方向）上flex子项的对齐方式
+值：flex-start//默认值，表示与行的起始位置对齐
+      flex-end//与行的结束位置对齐
+       center//与行的中间对齐
+       space-between//两端对齐，中间间距相等，要注意特殊情况，当剩余空间为
+                                      负数或只有一个项时，效果等同于flex-start
+       space-around//间距相等，中间距离是两端距离的两倍，要注意特殊情况，当剩余空间为
+                                      负数或只有一个项时，效果等同于center
+
+align-items//用于指定侧轴（垂直方向）上flex子项的对齐方式
+值：stretch//默认值，当flex子项未设置高度或者高度为auto时，stretch起作用，
+           	      将flex子项高度设置为行高度。在只有一行的情况下，行的高度为容器
+	      高度，即flex高度为容器高度
+        flex-start//侧轴开始的位置对齐
+        flex-end//侧轴的结束位置对齐
+       center//侧轴的中间对齐
+       baseline//基线对其，当行内轴与侧轴在同一线上，即所有flex子项的基线
+	      在同一线上时，效果等同于flex-start
+
+
+flex-wrap//用于指定flex子项是否换行
+值：nowrap//默认值，不换行，flex子项可能会溢出
+      wrap//换行，溢出的flex子项会被换到下一行
+      wrap-reverse//反方向换行
+
+align-self//用来单独指定某个flex子项的对齐方式
+值：auto、flex-start、flex-end、center、baseline、stretch//
+
+
+
+
+
+
+
+align-content//该属性只作用于多行，用于多行的对齐方式
+值：stretch//默认值，当flex子项未设置高度或者高度值为auto时起作用，
+                    将flex子项高度设置为行高度
+       flex-start//表示各行与侧轴开始位置对其，第一行紧靠侧轴开始边界，之后
+                             每一行紧靠前面一行
+        flex-end//表示各行与侧轴结束位置对齐，最后一行紧靠侧轴结束边界，，之后每一行都
+		紧靠前面一行
+        center//各行与侧轴中间对齐
+        space-between//两端对齐，中间间距相等，要注意特殊情况，当剩余空间为负数时，
+			效果等同于flex-start
+        space-around//各行之间间距相等，中间间距是两端间距的二倍，要注意特殊情况
+  		当剩余空间为负数时，效果等同于center
+
+
+3、复合属性flex：是flex-grow、flex-shrink、flex-basis的简写属性
+		，用来指定flex子项如何分配空间
+        	flex-grow//默认值是0，若省略则被认为1
+	flex-shrink//默认值是1，若省略则被认为0
+	flex-basis//默认值是auto，若省略则被认为0%
+
+//圣杯布局和双飞翼布局：两端宽度固定，中间宽度自适应的三栏布局
+一、圣杯布局 步骤：
+1、写下HTML代码
+2、使三个区域都处于浮动状态，并使中间区域的宽度为父容器的100%，父容器要设置最小宽度
+3、为两侧侧边栏添加负margin，用以调整位置，其中摆在左边left的margin-left为-100%，
+而右边right的margi-left为其自身的宽度。（利用了浮动元素的负margin到一定值后会使其
+自身往上移动的原理）
+4、为主容器设置左右padding值，使其为以后的侧边栏定位空出位置，padding的值为侧边
+栏的宽
+5、对左右侧边栏添加position：relative，然后对他们进行定位，移动到两侧
+二、双飞翼布局 步骤
+1、给main里面添加一个内容标签content，并且设置它的左右margin值为左右侧边栏的宽度
+2、使三个区域都处于浮动状态，并使中间区域的宽度为父容器的100%，父容器要设置最小宽度
+3、为两侧侧边栏添加负margin，用以调整位置，其中摆在左边left的margin-left为-100%，
+而右边right的margi-left为其自身的宽度。（利用了浮动元素的负margin到一定值后会使其
+自身往上移动的原理）
+4、去掉main的背景颜色和高度
+
+//常用的CSS3的属性
+1、transform//向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、
+		移动或倾斜。
+值：translateX(x)//定义转换，只是用 X 轴的值。2D变形移动
+      translateY(y)//定义转换，只是用 Y 轴的值。2D变形移动
+      translate(x,y)//定义 2D 转换。2D变形移动
+
+
+transform-origin//该属性必须与transform属性一同使用，改变转换元素的值
+
+
+
+transition//设置元素的过度效果
+值：transition-property//规定设置过渡效果的 CSS 属性的名称。
+       transition-duration//规定完成过渡效果需要多少秒或毫秒。
+        transition-timing-function//规定速度效果的速度曲线。
+        transition-delay//定义过渡效果何时开始。
+
+
+perspective//透视：视距：视距越大效果越不明显，3D动画
+在body中
+
+
+backface-visibility:hidden//隐藏背面的图片
+
+
+
+
+自定义动画
+@keyframes animationname {keyframes-selector {css-styles;}}
+值：	animationname//必需。定义动画的名称。
+	keyframes-selector//必需。动画时长的百分比。
+			合法的值：
+			0-100%
+			from（与 0% 相同）
+			to（与 100% 相同）
+	css-styles//必需。一个或多个合法的 CSS 样式属性。
+
+animation: name duration timing-function delay iteration-count direction;//引用动画
+值 animation-name//规定需要绑定到选择器的 keyframe 名称。。
+animation-duration//规定完成动画所花费的时间，以秒或毫秒计。
+animation-timing-function//规定动画的速度曲线。
+animation-delay//规定在动画开始之前的延迟。
+animation-iteration-count//规定动画应该播放的次数。
+animation-direction//规定是否应该轮流反向播放动画。
+
+animation-play-state //属性规定动画正在运行还是暂停。
+
+
+媒体查询
+1、概念：基于浏览器网站的设备的特性来应用不同的样式声明，比如通过视口的宽度
+2、操作方式：对设备提出询问（称作表达式）开始，如果表达式结果为真，媒体查询中的CSS
+被应用，如果为假被忽略
+3、常用名词
+（1）@media：以@media开头来表示这是一条媒体查询语句，紧跟在@media后面的是一个
+或多个表达式，可以判别为真或假
+（2）screen：在创建媒体查询时，必须以媒体类型（此处为screen）作为第一个表达式。相对应的
+有：print（打印机）、braille（盲文）、all(全部）或其他类型
+（4）and：关键字，表示有多个表达式，screen是第一个表达式，and后跟另一个表达式。前后都
+为真时，整条查询结果才为真。与其相对应的有or，not
+（5）(min-width:200px):所有表达式都应该包含在括号内，除非是只有一个单词的媒体类型表达式
+如，screen、print
+（6）{}：花括号里面的内容表示整条媒体查询结果为真时的CSS样式
+
+
+
+
+
